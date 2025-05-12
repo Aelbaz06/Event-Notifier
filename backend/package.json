@@ -4,7 +4,7 @@
   "main": "script.ts",
   "scripts": {
     "start": "npx ts-node script.ts",
-    "dev": "nodemon script.ts"
+    "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' script.ts"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,6 @@
     "@types/express": "^5.0.1",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
-    "typescript": "^5.0.0",
-    "typescriptnpm": "^1.0.1"
+    "typescript": "^5.8.3"
   }
 }
