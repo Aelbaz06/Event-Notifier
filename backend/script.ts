@@ -2,52 +2,52 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 
 const app = express();
-app.use(express.json());
-app.use(cors());
+// app.use(express.json());
+// app.use(cors());
 
-type User = {
-    id: string;
-    name: string;
-    username: string;
-    password: string;
-};
+// type User = {
+//     id: string;
+//     name: string;
+//     username: string;
+//     password: string;
+// };
 
-const users: User[] = [];
+// const users: User[] = [];
 
-const Ali: User = {
-    id: "1",
-    name: "Ali",
-    username: "aliprogrammer",
-    password: "tre"
-};
-users.push(Ali);
+// const Ali: User = {
+//     id: "1",
+//     name: "Ali",
+//     username: "aliprogrammer",
+//     password: "tre"
+// };
+// users.push(Ali);
 
-// GET /
-app.get("/", (req: Request, res: Response) => {
-    const user = req.query.user as string | undefined;
-    res.send((user ?? "Guest") + "!");
-});
+// // GET /
+// app.get("/", (req: Request, res: Response) => {
+//     const user = req.query.user as string | undefined;
+//     res.send((user ?? "Guest") + "!");
+// });
 
-// POST /create_user
-app.post("/create_user", (req: Request, res: Response) => {
-    const user: User = req.body.user;
+// // POST /create_user
+// app.post("/create_user", (req: Request, res: Response) => {
+//     const user: User = req.body.user;
 
-    users.push({
-        id: user.id,
-        name: user.name,
-        username: user.username,
-        password: user.password
-    });
+//     users.push({
+//         id: user.id,
+//         name: user.name,
+//         username: user.username,
+//         password: user.password
+//     });
 
-    console.log(users);
+//     console.log(users);
 
-    res.json({ loggedIn: true, message: "Everything went well" });
-});
+//     res.json({ loggedIn: true, message: "Everything went well" });
+// });
 
-// GET /users
-app.get("/users", (_req: Request, res: Response) => {
-    res.json(users);
-});
+// // GET /users
+// app.get("/users", (_req: Request, res: Response) => {
+//     res.json(users);
+// });
 
 // DELETE /delete
 // app.delete("/delete", (req: Request, res: Response) => {
