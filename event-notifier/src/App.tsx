@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { getUsers } from './api';
+import ZipcodeSearch from './components/ZipCodeSearch';
 
 type User = {
   id: string;
@@ -12,24 +13,12 @@ type User = {
 function App() {
   const [users, setUsers] = useState<User[]>([]);
 
-  const handleFetchData = async () => {
-    let data = await getUsers();
-    setUsers(data);
-  };
 
   useEffect(() => {
-    handleFetchData();
   }, []);
 
   return (
-    <div>
-      {users.map((user) => (
-        <div key={user.id}>
-          <p>{user.id}</p>
-          <p>{user.name}</p>
-        </div>
-      ))}
-    </div>
+    <ZipcodeSearch />
   );
 }
 
