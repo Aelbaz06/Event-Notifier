@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import { getUsers } from './api';
 
 type User = {
   id: string;
@@ -12,8 +13,7 @@ function App() {
   const [users, setUsers] = useState<User[]>([]);
 
   const handleFetchData = async () => {
-    const response = await fetch(`http://localhost:5000/users`);
-    const data = await response.json();
+    let data = await getUsers();
     setUsers(data);
   };
 
